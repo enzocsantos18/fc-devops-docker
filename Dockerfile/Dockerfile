@@ -11,4 +11,6 @@ RUN apt-get update && \
 # Copying directory html to container folder
 COPY html/ /usr/share/nginx/html
 
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["nginx", "-g", "daemon off;"]
 # To generate first docker image you need to run docker build -t {name/imageName} {path}
